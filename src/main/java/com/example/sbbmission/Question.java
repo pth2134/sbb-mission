@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -22,4 +23,8 @@ public class Question {
     private String content;
 
     private LocalDateTime createDate;
+
+    @OneToMany(mappedBy = "question",cascade = CascadeType.REMOVE)
+    //mappedBy = 누구의 키를 외래키로 사용할지 + Question에서는 관계를 관리하지 않겠다.(Question Table에는 Answer가 없음)
+    private List<Answer> answerList;
 }
