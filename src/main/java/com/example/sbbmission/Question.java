@@ -10,8 +10,9 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class Question {
-    @Id
+    @Id //키 선언 index처리?
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //전략 : db에게 맡긴다.
     private Integer id;
 
     @Column(length = 200)
