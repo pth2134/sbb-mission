@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -39,5 +40,13 @@ class SbbMissionApplicationTests {
         assertEquals("sbb가 무엇인가요?", q.getSubject());
     }
 
+    @Test
+    void findById() {
+        Optional<Question> oq = this.questionRepository.findById(1);
+        if(oq.isPresent()){
+            Question q = oq.get();
+            assertEquals("sbb가 무엇인가요?",q.getSubject();
+        }
+    }
 
 }
