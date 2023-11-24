@@ -37,6 +37,8 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
     //jpa
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    //thymeleaf 템플릿 상속 Layout Dialect
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.5.2'
 }
 
 tasks.named('bootBuildImage') {
