@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class UserController {
 
-    private UserService userService;
+    private final UserService userService;
 
     @GetMapping("/signup")
     public String signup(UserCreateForm userCreateForm) {
@@ -46,5 +46,4 @@ public class UserController {
         }
         return "redirect:/";
     }
-
 }
