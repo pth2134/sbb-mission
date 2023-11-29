@@ -1,6 +1,7 @@
 package com.example.sbbmission.answer;
 
 import com.example.sbbmission.question.Question;
+import com.example.sbbmission.user.SiteUser;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,4 +27,7 @@ public class Answer {
     private Question question; //외래키 역할
     //answer를 등록하면 question의 키를 가지는 row가 생성됨
     //외래키를 관리하는 쪽 즉,Answer가 연관관계의 주인
+
+    @ManyToOne
+    private SiteUser author;
 }

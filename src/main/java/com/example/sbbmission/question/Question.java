@@ -1,6 +1,7 @@
 package com.example.sbbmission.question;
 
 import com.example.sbbmission.answer.Answer;
+import com.example.sbbmission.user.SiteUser;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,4 +29,7 @@ public class Question {
     @OneToMany(mappedBy = "question",cascade = CascadeType.REMOVE)
     //mappedBy = 누구의 키를 외래키로 사용할지 + Question에서는 관계를 관리하지 않겠다.(Question Table에는 Answer가 없음)
     private List<Answer> answerList;
+
+    @ManyToOne
+    private SiteUser author;
 }
